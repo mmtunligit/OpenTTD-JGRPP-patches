@@ -647,6 +647,8 @@ add_files(
     water_cmd.cpp
     water_cmd.h
     water_map.h
+    waybill_gui.cpp
+    waybill_gui.h
     waypoint.cpp
     waypoint_base.h
     waypoint_cmd.cpp

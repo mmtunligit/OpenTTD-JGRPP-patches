@@ -61,5 +61,6 @@ add_files(
     tree_widget.h
     vehicle_widget.h
     viewport_widget.h
+    waybill_widget.h
     waypoint_widget.h
 )

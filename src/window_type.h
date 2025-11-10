@@ -820,6 +820,12 @@ enum WindowClass : uint16_t {
 	 */
 	WC_MODIFIER_KEY_TOGGLE,
 
+	/**
+	 * Waybill windows
+	 */
+	WC_WAYBILL_LIST,
+	WC_WAYBILL_VIEW,
+
 	WC_END,              ///< End sentinel.
 	WC_INVALID = 0xFFFF, ///< Invalid window.
 };

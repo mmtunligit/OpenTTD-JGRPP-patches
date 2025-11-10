@@ -29,6 +29,7 @@
 #include "company_gui.h"
 #include "vehicle_base.h"
 #include "cheat_func.h"
+#include "waybill_gui.h"
 #include "transparency_gui.h"
 #include "screenshot.h"
 #include "signs_func.h"
@@ -772,7 +773,7 @@ static CallBackFunction ToolbarIndustryClick(Window *w)
 	if (_local_company == COMPANY_SPECTATOR) {
 		PopupMainToolbarMenu(w, WID_TN_INDUSTRIES, {STR_INDUSTRY_MENU_INDUSTRY_DIRECTORY, STR_INDUSTRY_MENU_INDUSTRY_CHAIN});
 	} else {
-		PopupMainToolbarMenu(w, WID_TN_INDUSTRIES, {STR_INDUSTRY_MENU_INDUSTRY_DIRECTORY, STR_INDUSTRY_MENU_INDUSTRY_CHAIN, STR_INDUSTRY_MENU_FUND_NEW_INDUSTRY});
+		PopupMainToolbarMenu(w, WID_TN_INDUSTRIES, {STR_INDUSTRY_MENU_INDUSTRY_DIRECTORY, STR_INDUSTRY_MENU_INDUSTRY_CHAIN, STR_INDUSTRY_MENU_FUND_NEW_INDUSTRY, STR_INDUSTRY_MENU_WAYBILL_LIST});
 	}
 	return CBF_NONE;
 }
@@ -789,6 +790,7 @@ static CallBackFunction MenuClickIndustry(int index)
 		case 0: ShowIndustryDirectory();     break;
 		case 1: ShowIndustryCargoesWindow(); break;
 		case 2: ShowBuildIndustryWindow();   break;
+		case 3: ShowWaybillList();           break;
 	}
 	return CBF_NONE;
 }

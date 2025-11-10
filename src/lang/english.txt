@@ -501,6 +501,7 @@ STR_GRAPH_MENU_HIGHSCORE                                        :Highscore table
 STR_INDUSTRY_MENU_INDUSTRY_DIRECTORY                            :Industry directory
 STR_INDUSTRY_MENU_INDUSTRY_CHAIN                                :Industry chains
 STR_INDUSTRY_MENU_FUND_NEW_INDUSTRY                             :Fund new industry
+STR_INDUSTRY_MENU_WAYBILL_LIST                                  :Waybills
 
 # URailway construction menu
 STR_RAIL_MENU_RAILROAD_CONSTRUCTION                             :Railway construction
@@ -4755,6 +4756,16 @@ STR_ORDER_CONDITIONAL_NUM                                       :Jump to order {
 STR_ORDER_CONDITIONAL_TRUE_FALSE                                :Jump to order {COMMA} when {STRING} {STRING}
 
 STR_INVALID_ORDER                                               :{RED} (Invalid Order)
+
+# Waybill strings
+STR_WAYBILL_LIST_SELECT_ALL_MODES                               :{BLACK}Select all vehicle types
+STR_WAYBILL_LIST_ADD_WAYBILL_BUTTON                             :{BLACK}Add
+STR_WAYBILL_LIST_ADD_WAYBILL_TOOLTIP                            :{BLACK}Create a new waybill
+STR_WAYBILL_LIST_EDIT_WAYBILL_BUTTON                            :{BLACK}Edit
+STR_WAYBILL_LIST_EDIT_WAYBILL_TOOLTIP                           :{BLACK}Edit existing waybills
+STR_WAYBILL_LIST_SET_START_DATE_BUTTON                          :{BLACK}Schedule
+STR_WAYBILL_LIST_SET_START_DATE_TOOLTIP                         :{BLACK}Set a waybill to activate at some point in the future
+STR_WAYBILL_LIST_SHOW_ASSIGNED_VEH_TOOLTIP                      :{BLACK}Show vehicles assigned to these waybills
 
 # Time table window
 STR_TIMETABLE_TITLE                                             :{WHITE}{VEHICLE} (Timetable)

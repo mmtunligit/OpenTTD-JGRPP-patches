@@ -38,4 +38,9 @@ enum WaybillListWidgets : WidgetID {
 	WID_WBL_COMPANYDROPDOWN,///< Company dropdown list.
 };
 
+enum WaybillViewWidgets : WidgetID {
+	WID_WBV_RENAME,
+	WID_WBV_CAPTION,
+};
+
 #endif /* WIDGETS_VIEWPORT_WIDGET_H */

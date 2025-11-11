@@ -4767,6 +4767,8 @@ STR_WAYBILL_LIST_SET_START_DATE_BUTTON                          :{BLACK}Schedule
 STR_WAYBILL_LIST_SET_START_DATE_TOOLTIP                         :{BLACK}Set a waybill to activate at some point in the future
 STR_WAYBILL_LIST_SHOW_ASSIGNED_VEH_TOOLTIP                      :{BLACK}Show vehicles assigned to these waybills
 
+STR_WAYBILL_VIEW_LOAD                                           :{BLACK}Load:
+
 # Time table window
 STR_TIMETABLE_TITLE                                             :{WHITE}{VEHICLE} (Timetable)
 STR_TIMETABLE_ORDER_VIEW                                        :{BLACK}Orders

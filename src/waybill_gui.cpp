@@ -18,6 +18,49 @@
 #include "table/strings.h"
 #include "table/sprites.h"
 
+class WaybillViewWindow : public Window
+{
+protected:
+
+public:
+	WaybillViewWindow(WindowDesc &desc, WindowNumber window_number) :Window(desc)
+	{
+		this->CreateNestedTree();
+		this->FinishInitNested(window_number);
+	}
+};
+
+static constexpr NWidgetPart _nested_waybill_view_widgets[] = {
+	NWidget(NWID_HORIZONTAL),
+		NWidget(WWT_CLOSEBOX, COLOUR_GREY),
+		NWidget(WWT_IMGBTN, COLOUR_GREY, WID_WBV_RENAME), SetAspect(WidgetDimensions::ASPECT_RENAME), SetSpriteTip(SPR_RENAME, STR_NULL),
+		NWidget(WWT_CAPTION, COLOUR_GREY, WID_WBV_CAPTION),
+		NWidget(WWT_SHADEBOX, COLOUR_GREY),
+		NWidget(WWT_DEFSIZEBOX, COLOUR_GREY),
+		NWidget(WWT_STICKYBOX, COLOUR_GREY),
+	EndContainer(),
+	NWidget(NWID_HORIZONTAL),
+		NWidget(WWT_TEXT, INVALID_COLOUR), SetFill(0, 1), SetStringTip(STR_WAYBILL_VIEW_LOAD),
+	EndContainer(),
+};
+
+static WindowDesc _waybill_view_desc(__FILE__, __LINE__,
+	WDP_AUTO, "toolbar_landscape", 0, 0,
+	WC_WAYBILL_VIEW, WC_NONE, //TODO parent? default size, param 4
+	{},
+	_nested_waybill_view_widgets
+);
+
+/**
+ * Opens window with list of company's waybills
+ * TODO comments
+ * @param company whose stations' list show
+ */
+void ShowWaybillView()
+{
+	AllocateWindowDescFront<WaybillViewWindow>(_waybill_view_desc, 0);
+}
+
 class WaybillListWindow : public Window
 {
 protected:
@@ -33,7 +76,7 @@ public:
 	{
 		switch (widget) {
 			case WID_WBL_ADD_WAYBILL: {
-
+				ShowWaybillView();
 			}
 		}
 	}
@@ -75,8 +118,8 @@ static constexpr NWidgetPart _nested_waybill_list_widgets[] = {
 	SetStringTip(STR_WAYBILL_LIST_EDIT_WAYBILL_BUTTON, STR_WAYBILL_LIST_EDIT_WAYBILL_TOOLTIP),
 		NWidget(WWT_PUSHTXTBTN, COLOUR_GREY, WID_WBL_SET_START_DATE), SetMinimalSize(60, 12), SetResize(1, 0), SetFill(1, 1),
 	SetStringTip(STR_WAYBILL_LIST_SET_START_DATE_BUTTON, STR_WAYBILL_LIST_SET_START_DATE_TOOLTIP),
-		NWidget(WWT_PUSHIMGBTN, COLOUR_GREY, WID_WBL_DEACTIVATE), SetSpriteTip(SPR_FLAG_VEH_STOPPED), SetAspect(WidgetDimensions::ASPECT_VEHICLE_FLAG), SetFill(0, 1), //TODO strings
-		NWidget(WWT_PUSHIMGBTN, COLOUR_GREY, WID_WBL_ACTIVATE), SetSpriteTip(SPR_FLAG_VEH_RUNNING), SetAspect(WidgetDimensions::ASPECT_VEHICLE_FLAG), SetFill(0, 1), //TODO strings
+		NWidget(WWT_PUSHIMGBTN, COLOUR_GREY, WID_WBL_DEACTIVATE), SetSpriteTip(SPR_FLAG_VEH_STOPPED), SetAspect(WidgetDimensions::ASPECT_VEHICLE_FLAG), SetFill(0, 1),
+		NWidget(WWT_PUSHIMGBTN, COLOUR_GREY, WID_WBL_ACTIVATE), SetSpriteTip(SPR_FLAG_VEH_RUNNING), SetAspect(WidgetDimensions::ASPECT_VEHICLE_FLAG), SetFill(0, 1),
 		NWidget(WWT_PUSHIMGBTN, COLOUR_GREY, WID_WBL_ASSIGNED_VEH), SetAspect(1), SetSpriteTip(SPR_SHARED_ORDERS_ICON, STR_WAYBILL_LIST_SHOW_ASSIGNED_VEH_TOOLTIP),
 	NWidget(WWT_RESIZEBOX, COLOUR_GREY),
 	EndContainer(),
@@ -84,7 +127,7 @@ static constexpr NWidgetPart _nested_waybill_list_widgets[] = {
 
 static WindowDesc _waybill_list_desc(__FILE__, __LINE__,
 	WDP_AUTO, "toolbar_landscape", 358, 162,
-		WC_WAYBILL_LIST, WC_NONE,
+		WC_WAYBILL_LIST, WC_NONE, //TODO parent? default size, param 4
 	{},
 	_nested_waybill_list_widgets
 );

@@ -13,5 +13,6 @@
 #include "window_type.h"
 
 void ShowWaybillList();
+void ShowWaybillView();
 
 #endif /* WAYBILL_GUI_H */
